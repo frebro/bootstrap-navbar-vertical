@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-navbar-vertical",
+  "version": "0.0.0",
+  "authors": [
+    "Fredrik Broman <frebro@gmail.com>"
+  ],
+  "description": "A vertical layout extension for Bootstrap Navbar.",
+  "keywords": [
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/frebro/bootstrap-vertical-navbar",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "3.2.0"
+  }
+}
