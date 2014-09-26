@@ -19,6 +19,11 @@
         padding-top: 50px;
     }
 }
+.navbar-fixed-left .container,
+.navbar-fixed-right .container
+{
+    width: auto !important;
+}
 @media (min-width: 768px)
 {
     .navbar-fixed-left .navbar-header,
