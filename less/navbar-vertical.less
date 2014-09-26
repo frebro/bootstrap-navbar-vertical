@@ -1,6 +1,268 @@
 
+@import 'variables.less';
+@import 'mixins.less';
+
 @import 'bootstrap/less/variables.less';
 @import 'bootstrap/less/mixins.less';
 
-@import 'variables.less';
-@import 'mixins.less';
+
+//
+// Grid tweaks
+//
+// Modifications to the grid
+
+// Re-calculate container widths to fit vertical navbars
+.container.container-navbar-vertical {
+  @media (min-width: @screen-sm-min) {
+    width: (@container-sm - ( 2 * @navbar-width ));
+  }
+  @media (min-width: @screen-md-min) {
+    width: (@container-md - ( 2 * @navbar-width ));
+  }
+  @media (min-width: @screen-lg-min) {
+    width: (@container-lg - ( 2 * @navbar-width ));
+  }
+}
+.container-fluid.container-navbar-vertical {
+  margin-right: @navbar-width;
+  margin-left: @navbar-width;
+}
+
+
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+.navbar-fixed-left .navbar-header,
+.navbar-fixed-right .navbar-header {
+  @media (min-width: @grid-float-breakpoint) {
+    float: none;
+  }
+}
+
+
+
+
+
+// Navbar collapse (body)
+//
+// Group your navbar content into this for easy collapsing and expanding across
+// various device sizes. By default, this content is collapsed when <768px, but
+// will expand past that for a horizontal display.
+//
+// To start (on mobile devices) the navbar links, forms, and buttons are stacked
+// vertically and include a `max-height` to overflow in case you have too much
+// content for the user's viewport.
+
+.navbar-fixed-left .navbar-collapse,
+.navbar-fixed-right .navbar-collapse {
+  // overflow-x: visible;
+  // padding-right: @navbar-padding-horizontal;
+  // padding-left:  @navbar-padding-horizontal;
+  // border-top: 1px solid transparent;
+  // box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  // &:extend(.clearfix all);
+  // -webkit-overflow-scrolling: touch;
+
+  // &.in {
+  //   overflow-y: auto;
+  // }
+
+  @media (min-width: @grid-float-breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+
+  //   width: auto;
+  //   border-top: 0;
+  //   box-shadow: none;
+
+  //   &.collapse {
+  //     display: block !important;
+  //     height: auto !important;
+  //     padding-bottom: 0; // Override default setting
+  //     overflow: visible !important;
+  //   }
+
+  //   &.in {
+  //     overflow-y: visible;
+  //   }
+
+  //   // Undo the collapse side padding for navbars with containers to ensure
+  //   // alignment of right-aligned contents.
+  //   .navbar-fixed-top &,
+  //   .navbar-static-top &,
+  //   .navbar-fixed-bottom & {
+  //     padding-left: 0;
+  //     padding-right: 0;
+  //   }
+  }
+}
+
+
+//
+// Vertical Navbar alignment options
+//
+// Display the navbar fixed to the top or bottom of the page.
+
+// Fix the left/right navbars when screen real estate supports it
+.navbar-fixed-left,
+.navbar-fixed-right {
+  margin-bottom: 0; // override .navbar defaults
+  width: @navbar-width;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: @zindex-navbar-fixed;
+  .translate3d(0, 0, 0);
+
+  // Undo the rounded corners
+  @media (min-width: @grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}
+.navbar-fixed-left {
+  left: 0;
+  border-width: 0 0 0 1px;
+}
+.navbar-fixed-right {
+  right: 0;
+  border-width: 0 1px 0 0;
+}
+
+
+// Brand/project name
+
+.navbar-brand {
+
+  // Override .navbar defaults
+  .navbar-fixed-left &,
+  .navbar-fixed-right & {
+    float: none;
+    display: inline-block;
+
+    // padding: @navbar-padding-vertical @navbar-padding-horizontal;
+    // font-size: @font-size-large;
+    // line-height: @line-height-computed;
+    // height: @navbar-height;
+
+    // &:hover,
+    // &:focus {
+    //   text-decoration: none;
+    // }
+
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar-fixed-left > .container &,
+    .navbar-fixed-right > .container &,
+    .navbar-fixed-left > .container-fluid &,
+    .navbar-fixed-right > .container-fluid & {
+      margin-left: -@navbar-padding-horizontal;
+    }
+  }
+}
+
+
+
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+// .navbar-fixed-left .navbar-toggle,
+// .navbar-fixed-right .navbar-toggle {
+//   position: relative;
+//   float: right;
+//   margin-right: @navbar-padding-horizontal;
+//   padding: 9px 10px;
+//   .navbar-vertical-align(34px);
+//   background-color: transparent;
+//   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+//   border: 1px solid transparent;
+//   border-radius: @border-radius-base;
+
+//   // We remove the `outline` here, but later compensate by attaching `:hover`
+//   // styles to `:focus`.
+//   &:focus {
+//     outline: 0;
+//   }
+
+//   // Bars
+//   .icon-bar {
+//     display: block;
+//     width: 22px;
+//     height: 2px;
+//     border-radius: 1px;
+//   }
+//   .icon-bar + .icon-bar {
+//     margin-top: 4px;
+//   }
+
+//   @media (min-width: @grid-float-breakpoint) {
+//     display: none;
+//   }
+// }
+
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+.navbar-fixed-left .navbar-nav,
+.navbar-fixed-right .navbar-nav {
+  // margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+
+  // > li > a {
+  //   padding-top:    10px;
+  //   padding-bottom: 10px;
+  //   line-height: @line-height-computed;
+  // }
+
+  // @media (max-width: @grid-float-breakpoint-max) {
+  //   // Dropdowns get custom display when collapsed
+  //   .open .dropdown-menu {
+  //     position: static;
+  //     float: none;
+  //     width: auto;
+  //     margin-top: 0;
+  //     background-color: transparent;
+  //     border: 0;
+  //     box-shadow: none;
+  //     > li > a,
+  //     .dropdown-header {
+  //       padding: 5px 15px 5px 25px;
+  //     }
+  //     > li > a {
+  //       line-height: @line-height-computed;
+  //       &:hover,
+  //       &:focus {
+  //         background-image: none;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // Uncollapse the nav
+  @media (min-width: @grid-float-breakpoint) {
+    float: none;
+    margin-left: -@navbar-padding-horizontal;
+    margin-right: -@navbar-padding-horizontal;
+    // margin: 0;
+
+    > li {
+      float: none;
+      // > a {
+      //   padding-top:    @navbar-padding-vertical;
+      //   padding-bottom: @navbar-padding-vertical;
+      // }
+    }
+
+    // &.navbar-right:last-child {
+    //   margin-right: -@navbar-padding-horizontal;
+    // }
+  }
+}
