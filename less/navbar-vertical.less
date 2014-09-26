@@ -6,29 +6,6 @@
 @import 'bootstrap/less/mixins.less';
 
 
-//
-// Grid tweaks
-//
-// Modifications to the grid
-
-// Re-calculate container widths to fit vertical navbars
-.container.container-navbar-vertical {
-  @media (min-width: @screen-sm-min) {
-    width: (@container-sm - ( 2 * @navbar-width ));
-  }
-  @media (min-width: @screen-md-min) {
-    width: (@container-md - ( 2 * @navbar-width ));
-  }
-  @media (min-width: @screen-lg-min) {
-    width: (@container-lg - ( 2 * @navbar-width ));
-  }
-}
-.container-fluid.container-navbar-vertical {
-  margin-right: @navbar-width;
-  margin-left: @navbar-width;
-}
-
-
 // Navbar heading
 //
 // Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy

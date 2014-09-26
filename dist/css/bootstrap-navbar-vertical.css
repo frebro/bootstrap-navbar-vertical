@@ -6,32 +6,6 @@
 
 @media (min-width: 768px)
 {
-    .container.container-navbar-vertical
-    {
-        width: 350px;
-    }
-}
-@media (min-width: 992px)
-{
-    .container.container-navbar-vertical
-    {
-        width: 570px;
-    }
-}
-@media (min-width: 1200px)
-{
-    .container.container-navbar-vertical
-    {
-        width: 770px;
-    }
-}
-.container-fluid.container-navbar-vertical
-{
-    margin-right: 200px;
-    margin-left: 200px;
-}
-@media (min-width: 768px)
-{
     .navbar-fixed-left .navbar-header,
     .navbar-fixed-right .navbar-header
     {
