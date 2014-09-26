@@ -6,6 +6,21 @@
 
 @media (min-width: 768px)
 {
+    body
+    {
+        padding-right: 140px;
+        padding-left: 140px;
+    }
+}
+@media (max-width: 767px)
+{
+    body
+    {
+        padding-top: 50px;
+    }
+}
+@media (min-width: 768px)
+{
     .navbar-fixed-left .navbar-header,
     .navbar-fixed-right .navbar-header
     {
@@ -26,7 +41,7 @@
     top: 0;
     bottom: 0;
 
-    width: 200px;
+    width: 140px;
     margin-bottom: 0;
 
     -webkit-transform: translate3d(0, 0, 0);

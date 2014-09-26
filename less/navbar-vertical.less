@@ -6,6 +6,23 @@
 @import 'bootstrap/less/mixins.less';
 
 
+// Body paddings
+//
+// Creates paddings on <body> to accomodate the navbar
+
+@media (min-width: @grid-float-breakpoint) {
+  body {
+    padding-left: @navbar-width;
+    padding-right: @navbar-width;
+  }
+}
+@media (max-width: @grid-float-breakpoint-max) {
+  body {
+    padding-top: @navbar-height;
+  }
+}
+
+
 // Wrapper and base class
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
