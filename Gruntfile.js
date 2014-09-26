@@ -39,7 +39,7 @@ module.exports = function (grunt) {
           ]
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/navbar-vertical.less'
+          'dist/css/<%= pkg.name %>.css': 'less/_dist.less'
         }
       }
     },
