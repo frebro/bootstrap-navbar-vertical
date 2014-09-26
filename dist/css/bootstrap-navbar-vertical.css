@@ -113,4 +113,14 @@
         float: none;
     }
 }
+.navbar-fixed-left .navbar-nav .open .dropdown-menu
+{
+    top: 0;
+    left: 100%;
+}
+.navbar-fixed-right .navbar-nav .open .dropdown-menu
+{
+    top: 0;
+    left: -100%;
+}
 /*# sourceMappingURL=bootstrap-navbar-vertical.css.map */
