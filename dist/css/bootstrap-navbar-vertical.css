@@ -60,17 +60,20 @@
         border-radius: 0;
     }
 }
-.navbar-fixed-left
+@media (min-width: 768px)
 {
-    left: 0;
+    .navbar-fixed-left
+    {
+        left: 0;
 
-    border-width: 0 0 0 1px;
-}
-.navbar-fixed-right
-{
-    right: 0;
+        border-width: 0 0 0 1px;
+    }
+    .navbar-fixed-right
+    {
+        right: 0;
 
-    border-width: 0 1px 0 0;
+        border-width: 0 1px 0 0;
+    }
 }
 @media (min-width: 768px)
 {
