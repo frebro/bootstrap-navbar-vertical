@@ -1,20 +1,4 @@
 
-// Body paddings
-//
-// Creates paddings on <body> to accomodate the navbar
-
-@media (min-width: @grid-float-breakpoint) {
-  body {
-    padding-left: @navbar-width;
-    padding-right: @navbar-width;
-  }
-}
-@media (max-width: @grid-float-breakpoint-max) {
-  body {
-    padding-top: @navbar-height;
-  }
-}
-
 
 // Wrapper and base class
 //
@@ -85,7 +69,7 @@
 //     overflow-y: auto;
 //   }
 
-//   @media (min-width: @grid-float-breakpoint) {
+  @media (min-width: @grid-float-breakpoint) {
 //     width: auto;
 //     border-top: 0;
 //     box-shadow: none;
@@ -111,7 +95,7 @@
 //       padding-left: 0;
 //       padding-right: 0;
 //     }
-//   }
+  }
 }
 
 
@@ -317,6 +301,11 @@
 
       > li {
         float: none;
+
+        > a {
+          padding-right: @navbar-padding-horizontal;
+          padding-left:  @navbar-padding-horizontal;
+        }
       }
     }
     // float: left;
